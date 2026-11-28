@@ -1,0 +1,11 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.stockdataarchive/stock-data-archive",
+  "title": "Stock Data Archive",
+  "description": "Discover historical US stock/ETF coverage, Parquet/CSV samples, formats and purchased downloads.",
+  "version": "1.0.0",
+  "websiteUrl": "https://stockdataarchive.com/mcp-server/",
+  "remotes": [
+    {"type": "streamable-http", "url": "https://stockdataarchive.com/mcp"}
+  ]
+}

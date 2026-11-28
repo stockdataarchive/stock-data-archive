@@ -1,0 +1,21 @@
+name: Verify reproducible research
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests
+      - run: python scripts/backtest.py
+      - run: python examples/aapl_sample.py
+      - run: python scripts/build_site.py
+      - run: git diff --exit-code -- docs/results.json docs/results.csv docs/index.html

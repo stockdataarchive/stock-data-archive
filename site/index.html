@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Stock Data Archive: Free Samples and MCP Examples</title>
+  <meta name="description" content="Try Stock Data Archive with free AAPL files, ticker coverage through MCP, DuckDB queries and a reproducible backtest using bars and quotes.">
+  <link rel="canonical" href="https://stockdataarchive.github.io/stock-data-archive/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Stock Data Archive examples">
+  <meta property="og:description" content="Free stock data samples, coverage lookups through MCP and a worked backtest with source code.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://stockdataarchive.github.io/stock-data-archive/assets/website-preview.png">
+  <meta property="og:url" content="https://stockdataarchive.github.io/stock-data-archive/">
+  <meta name="theme-color" content="#152e40">
+  <style>
+    :root{color-scheme:light;--ink:#152e40;--muted:#526575;--line:#ced9e1;--blue:#075b88;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;color:var(--ink);background:#fff;font:17px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:4px}a:hover{text-decoration-thickness:2px}a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #d88712;outline-offset:4px}.wrap{width:min(1040px,calc(100% - 56px));margin:auto}header{border-bottom:1px solid var(--line)}header .wrap{display:flex;justify-content:space-between;align-items:center;padding:24px 0;gap:24px}.brand{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}header nav{display:flex;gap:24px;font-size:14px}header nav a{text-decoration:none}.masthead{padding:54px 0 32px;border-bottom:1px solid var(--line)}.eyebrow{font:13px var(--mono);color:var(--muted);letter-spacing:.03em}h1{font-size:clamp(36px,5vw,54px);line-height:1.12;letter-spacing:-.045em;max-width:820px;margin:20px 0 24px;font-weight:680}.intro{font-size:21px;line-height:1.6;max-width:750px;color:#354e60;margin:0 0 18px}.byline{font-size:14px;color:var(--muted);margin:0}.content{display:grid;grid-template-columns:180px minmax(0,1fr);gap:48px;padding-top:38px}.contents{align-self:start;position:sticky;top:24px;font-size:14px}.contents strong{display:block;margin-bottom:12px}.contents a{display:block;text-decoration:none;color:var(--muted);padding:6px 0}article section{margin-bottom:52px}h2{font-size:28px;line-height:1.25;letter-spacing:-.025em;margin:0 0 20px}h3{font-size:21px;line-height:1.4;margin:28px 0 12px}p{margin:0 0 20px}li{margin:10px 0}ol,ul{padding-left:24px}.table-scroll{overflow:auto;margin:24px 0}table{border-collapse:collapse;width:100%;font-size:14px;text-align:left}th,td{padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}thead{border-top:2px solid var(--ink);background:#f4f7f9}tbody th{font-weight:600}caption{font-size:14px;text-align:left;color:var(--muted);padding-bottom:12px}.result-table td{font-family:var(--mono);white-space:nowrap}.result-table tbody tr:last-child{background:#f2f7fa}.note{border-left:3px solid #39778e;padding:12px 18px;background:#f2f7fa;font-size:15px}.note p:last-child{margin:0}code{font:.87em var(--mono);overflow-wrap:anywhere}pre{background:#152e40;color:#e5eef5;padding:21px;overflow:auto;font:14px/1.8 var(--mono);border-radius:3px}pre code{font:inherit;overflow-wrap:normal}.chart-box{margin:30px 0}#price-chart{display:block;width:100%;height:auto}svg text{font-family:var(--mono)}.caption{font-size:14px;color:var(--muted);margin:10px 0}.lab{border:1px solid var(--line);padding:24px;background:#f9fbfc}.controls{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:26px}label{font-size:14px;font-weight:600;display:block}input,select{font:16px system-ui;color:var(--ink);border:1px solid #9eb3c1;background:white;border-radius:3px;padding:10px 12px;width:100%;margin-top:7px}select{appearance:none;padding-right:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3E%3Cpath d='m2 2 5 5 5-5' fill='none' stroke='%23152e40' stroke-width='2'/%3E%3C/svg%3E");background-position:right 14px center;background-repeat:no-repeat}input[type=range]{padding:0;accent-color:#216c89;min-height:32px}output{font:600 14px var(--mono)}.lab-result{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:20px}.lab-result strong{display:block;font:34px var(--mono);margin-top:7px}.lab-result span{font-size:14px;color:var(--muted)}.negative strong{color:#a6382c}.downloads{display:flex;gap:22px;flex-wrap:wrap;margin:20px 0;font-size:15px}.hash{font-size:11px;display:block;min-width:140px;word-break:break-all}details{border-top:1px solid var(--line);padding:16px 0}summary{cursor:pointer;font-weight:600}details p{margin:12px 0 0;font-size:15px}.references{list-style:none;padding:0}.references li{border-top:1px solid var(--line);padding:15px 0;margin:0}.references span{display:block;color:var(--muted);font-size:15px;margin-top:5px}footer{border-top:1px solid var(--line);margin-top:12px;padding:28px 0 38px;color:var(--muted);font-size:14px}footer .wrap{display:flex;justify-content:space-between;gap:24px}.skip{position:absolute;top:-80px;left:20px;padding:12px;background:#fff;z-index:5}.skip:focus{top:10px}@media(max-width:860px){.content{grid-template-columns:1fr;gap:24px}.contents{position:static;display:flex;flex-wrap:wrap;gap:8px 22px;border-bottom:1px solid var(--line);padding-bottom:22px}.contents strong{display:none}.contents a{padding:0}.masthead{padding-top:36px}}@media(max-width:560px){.wrap{width:calc(100% - 36px)}header .wrap{align-items:flex-start}header nav{gap:12px;flex-wrap:wrap;justify-content:flex-end;font-size:13px}.brand{font-size:16px;max-width:130px}h1{font-size:38px}.intro{font-size:19px}.controls{grid-template-columns:1fr}.lab{padding:18px}.lab-result{align-items:flex-start;flex-direction:column}.lab-result strong{font-size:30px}h2{font-size:26px}footer .wrap{flex-direction:column;gap:12px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+    .website-links{display:flex;flex-wrap:wrap;gap:12px 22px;margin:22px 0 0;font-size:15px}.website-links a:first-child{font-weight:700}.website-preview{display:block;width:100%;height:auto;margin-top:28px;border:1px solid var(--line)}
+    .brand{display:inline-flex;align-items:center;gap:10px}.brand img{width:32px;height:32px;flex-shrink:0}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","description":"Public examples for the Stock Data Archive website: free sample files, historical ticker coverage through MCP and a reproducible AAPL backtest.","datePublished":"2026-11-24","dateModified":"2026-11-24","author":{"@type":"Organization","name":"Stock Data Archive","url":"https://stockdataarchive.com"},"mainEntityOfPage":"https://stockdataarchive.github.io/stock-data-archive/","isAccessibleForFree":true,"name":"Stock Data Archive examples"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><a class="brand" href="https://stockdataarchive.com/"><img src="assets/logo-mark.svg" width="32" height="32" alt="">Stock Data Archive</a><nav aria-label="Main"><a href="#sample-data">Examples</a><a href="https://stockdataarchive.com/docs/">Data docs</a><a href="https://github.com/stockdataarchive/stock-data-archive">Source code</a></nav></div></header>
+<main id="main">
+<div class="wrap masthead">
+  <div class="eyebrow">PUBLIC EXAMPLES</div>
+  <h1>Stock Data Archive examples</h1>
+  <p class="intro"><a href="https://stockdataarchive.com/">Stock Data Archive</a> provides historical US stock and ETF files for backtesting. Try the public data, check a symbol's coverage, or connect an agent through MCP.</p>
+  <p class="byline">Parquet and CSV · Bars, trades and quotes · Listed and delisted tickers</p>
+  <div class="website-links"><a href="https://stockdataarchive.com/">Visit stockdataarchive.com</a><a href="https://stockdataarchive.com/free-intraday-data/">Try the free files</a><a href="https://stockdataarchive.com/stocks/">Check ticker coverage</a></div>
+  <a href="https://stockdataarchive.com/"><img class="website-preview" src="assets/website-preview.png" width="1200" height="630" alt="Stock Data Archive website preview"></a>
+</div>
+<div class="wrap content">
+<aside class="contents" aria-label="On this page"><strong>On this page</strong><a href="#sample-data">Free sample data</a><a href="#ticker-coverage">Ticker coverage</a><a href="#finding">Backtest example</a><a href="#method">Entry at 10:25</a><a href="#lab">Execution costs</a><a href="#reproduce">Reproduce it</a><a href="#checks">Input checks</a><a href="#limits">Assumptions</a><a href="#read">Related examples</a></aside>
+<article>
+<section id="sample-data">
+  <h2>Read a free AAPL sample</h2>
+  <p>The <a href="https://stockdataarchive.com/free-intraday-data/">website's free samples</a> include one day of AAPL minute bars, trades and quotes, plus daily bars. You can inspect them without an account.</p>
+  <p>After the <a href="#reproduce">one-time setup</a>, run the <a href="https://github.com/stockdataarchive/stock-data-archive/blob/main/examples/aapl_sample.py">sample-file example</a>:</p>
+  <pre><code>python examples/aapl_sample.py</code></pre>
+  <p>It downloads the minute-bar Parquet file, checks its fingerprint, converts timestamps to New York time and writes CSV. For November 9, 2026, it finds 846 bars: 276 pre-market, 390 in the regular session and 180 after hours.</p>
+  <p>The <a href="https://stockdataarchive.com/docs/">file documentation</a> explains the timestamp and price columns. <a href="https://github.com/stockdataarchive/stock-data-archive/blob/main/examples/sample.sql">DuckDB queries</a> are included for inspecting the same file with SQL.</p>
+</section>
+<section id="ticker-coverage">
+  <h2>Check listed and delisted coverage</h2>
+  <p>Use the <a href="https://stockdataarchive.com/stocks/">website catalogue</a> to find the dates available for a symbol. The public MCP server exposes the same coverage information to agents and scripts.</p>
+  <pre><code>python examples/catalogue.py LEH
+python examples/catalogue.py AAPL --json</code></pre>
+  <p>The <a href="https://github.com/stockdataarchive/stock-data-archive/blob/main/examples/catalogue.py">catalogue example</a> requests coverage, file schemas and sample URLs. For LEH it returns Lehman Brothers' history from September 10, 2003 to September 17, 2008, matching the <a href="https://stockdataarchive.com/stocks/leh/">website's LEH page</a>.</p>
+  <p>The client uses only public read-only tools and sends no account credentials. Its JSON option prints the full results for another program. See the <a href="https://stockdataarchive.com/mcp-server/">MCP setup guide</a> to connect Claude Code, Codex, Cursor or another client.</p>
+</section>
+<section id="finding">
+  <h2>Backtest an opening range breakout</h2>
+  <p>The opening range is the high of AAPL's first 30 regular-session minutes. The first later minute to cross that high starts at 10:24 AM Eastern. For this example, the strategy waits until that minute finishes, enters at 10:25 and exits at 3:55 PM.</p>
+  <p>The minute-bar reference uses the open of each execution minute. The quote model buys at the last observed ask and sells at the last observed bid. The midpoint row below uses those same quote snapshots; it shows how much of the difference comes from crossing the spread.</p>
+  <div class="table-scroll"><table class="result-table"><caption>Gross result for one share, before fees and extra slippage</caption><thead><tr><th scope="col">Price model</th><th scope="col">Entry</th><th scope="col">Exit</th><th scope="col">Result</th></tr></thead><tbody><tr><th scope="row">Minute opens</th><td>$@@BAR_BUY@@</td><td>$@@BAR_SELL@@</td><td>$@@BAR_RESULT@@</td></tr><tr><th scope="row">Quoted midpoints</th><td>$@@MID_BUY@@</td><td>$@@MID_SELL@@</td><td>$@@MID_RESULT@@</td></tr><tr><th scope="row">Quoted ask to bid</th><td>$@@QUOTE_BUY@@</td><td>$@@QUOTE_SELL@@</td><td>$@@QUOTE_RESULT@@</td></tr></tbody></table></div>
+  <p>The bar-to-quote gap is @@BAR_GAP_CENTS@@ cents per share. Crossing the spread accounts for @@SPREAD_CENTS@@ cents at these snapshots. The other 3.5 cents comes from the difference between minute opens and quoted midpoints. Calling the whole gap the spread would overstate it.</p>
+  <div class="chart-box"><svg id="price-chart" viewBox="0 0 800 300" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">AAPL prices and the opening range high</title><desc id="chart-desc">Five-minute sampled closes, with the 350.34 opening range high, the 10:25 decision and the 15:55 exit marked.</desc></svg><p class="caption">Five-minute sampled closes, New York time. The backtest uses every regular-session minute; the chart is a summary.</p></div>
+  <div class="note"><p>This is an execution example for one historical trade. It does not estimate the strategy's win rate or performance across other days. Displayed quotes are hypothetical fill prices, not proof that an order would have filled.</p></div>
+  <noscript><p>The chart and cost controls need JavaScript. The results table, method and downloads work without it.</p></noscript>
+</section>
+<section id="method">
+  <h2>Entry at 10:25</h2>
+  <ol><li><strong>Build the range.</strong> Use the 30 bars starting at 09:30 through 09:59 Eastern. Their maximum high is $350.34. That range is complete at 10:00.</li><li><strong>Wait for a completed breakout minute.</strong> The first subsequent bar with a high strictly above $350.34 starts at 10:24 and reaches $350.43. Its completed high is treated as available at 10:25.</li><li><strong>Compare prices at the decision time.</strong> The bar reference enters at the 10:25 open. The quote model uses the latest ask strictly before 10:25. Both exit on the clock at 15:55.</li></ol>
+  <p>A bar timestamp marks the start of the minute. Filling inside the 10:24 minute using its completed high would let the strategy act before that high was known. The example therefore puts the decision at the next boundary. It assumes the finalized bar is available then; actual bar-delivery delay and revisions are not reconstructed.</p>
+  <p>Quotes are ordered by <code>ts_sip</code>, then sequence number. A quote at the exact requested execution timestamp is excluded because the ordering between streams is ambiguous. The selected quote must have positive prices and sizes, an ask at least as high as the bid, and an age of one second or less.</p>
+  <p>The zero-delay entry quote is 80.286 milliseconds old. The exit quote is 0.757 milliseconds old. The latency options below move both execution times forward; the minute-open reference stays fixed.</p>
+</section>
+<section id="lab">
+  <h2>Change the execution costs</h2>
+  <p>The quote model already crosses the spread. These controls add slippage beyond the displayed ask and bid, plus commission on each side of the trade.</p>
+  <div class="lab"><form id="cost-form"><div class="controls"><label>Share count<input id="shares" type="number" value="100" min="1" max="100000" step="1"></label><label>Added delay on entry and exit<select id="latency"><option value="0">0 ms</option><option value="100">100 ms</option><option value="250">250 ms</option><option value="1000">1,000 ms</option></select></label><label>Extra slippage per side · <output id="bps-label" for="bps">0.0 bps</output><input id="bps" type="range" value="0" min="0" max="20" step="0.1"></label><label>Commission per share, per side ($)<input id="commission" type="number" value="0" min="0" max="1" step="0.001"></label></div></form>
+  <div class="lab-result" id="result-panel" aria-live="polite"><div><span>Modeled net result for this trade</span><strong id="net-result">+$87.00</strong></div><div><span id="net-per-share">+$0.8700 per share · 100 shares</span><br><span id="net-cost">$0.00 in extra modeled costs</span></div></div>
+  <div class="table-scroll"><table><caption>Quote snapshots for the selected delay</caption><thead><tr><th scope="col">Leg</th><th scope="col">Requested time ET</th><th scope="col">Model price</th><th scope="col">Quote age</th></tr></thead><tbody id="fills"><tr><th scope="row">Buy at ask</th><td>10:25:00.000</td><td>$350.38</td><td>80.286 ms</td></tr><tr><th scope="row">Sell at bid</th><td>15:55:00.000</td><td>$351.25</td><td>0.757 ms</td></tr></tbody></table></div>
+  <p class="caption">Share count scales the arithmetic. It does not model available depth, partial fills, queue position, routing or market impact. Four latency snapshots from one day do not estimate typical execution costs.</p></div>
+  <div class="downloads"><a href="results.json" download>Results JSON</a><a href="results.csv" download>Scenario CSV</a><a href="https://github.com/stockdataarchive/stock-data-archive/blob/main/scripts/backtest.py">Backtest source</a></div>
+</section>
+<section id="reproduce">
+  <h2>Reproduce the study</h2>
+  <p>Use Python 3.10 or later. The script downloads the three public sample files, checks their pinned SHA-256 hashes and writes the results. No account or API key is required.</p>
+  <pre><code>git clone https://github.com/stockdataarchive/stock-data-archive.git
+cd stock-data-archive
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python scripts/backtest.py
+python -m unittest discover -s tests</code></pre>
+  <p>Existing downloads can be passed with <code>--data-dir /path/to/samples</code>. Files stay in the ignored cache; this repository publishes code and calculated summaries. Market data use follows the <a href="https://stockdataarchive.com/license/">dataset license</a>.</p>
+  <h3>Read the bar timestamps in DuckDB</h3>
+  <pre><code>SELECT
+  to_timestamp("timestamp" / 1e9)
+    AT TIME ZONE 'America/New_York' AS bar_start,
+  open, high, low, close
+FROM read_parquet(
+  'https://stockdataarchive.com/samples/AAPL_2026-11-09_1min.parquet'
+)
+ORDER BY "timestamp"
+LIMIT 5;</code></pre>
+  <p>The conversion above is for display. The backtest compares timestamps as integer nanoseconds, preserving their precision for quote matching.</p>
+</section>
+<section id="checks">
+  <h2>Input checks</h2>
+  <p>The files contain 846 minute bars, 754,422 trades and 517,808 quotes. All 390 regular-session minutes are present and contiguous. The script checks for unexpected symbols, duplicate or misaligned bar timestamps, missing opening minutes and inconsistent OHLC values.</p>
+  <p>Across the full quote file, 435 rows have nonpositive prices or sizes, or a crossed market. Neither baseline execution snapshot fails those checks. The code selects the latest quote first, then validates it. Filtering bad rows before selection could incorrectly bring an older quote back into use after the latest quote had withdrawn.</p>
+  <div class="table-scroll"><table><caption>Public files used in this run</caption><thead><tr><th scope="col">Dataset</th><th scope="col">Rows</th><th scope="col">SHA-256</th></tr></thead><tbody>@@SOURCE_ROWS@@</tbody></table></div>
+  <p>Eight regression checks cover signal timing, threshold equality, incomplete opening ranges, an entry at the exit time, future quotes, sequence ordering, withdrawals and stale snapshots. GitHub Actions reruns the study from public downloads and compares its output with the committed results.</p>
+</section>
+<section id="limits">
+  <h2>Assumptions to keep in view</h2>
+  <details open><summary>Historical bars may differ from what arrived live.</summary><p>The example uses finalized OHLC bars and assumes each is available at the next minute boundary, before any selected added delay. Late reports, bar revisions and trade-condition eligibility are not reconstructed.</p></details>
+  <details><summary>Minute OHLC does not contain the bid-ask spread.</summary><p>Quotes provide an observed spread. A spread estimated from volatility, volume or a fixed basis-point charge remains a model assumption. Without quotes, test a range of costs and report the break-even cost.</p></details>
+  <details><summary>The next minute's high is an adverse scenario, not an observed fill.</summary><p>That high is known only after the next minute finishes. Using it as a long-entry stress test can be useful, but it mixes timing uncertainty with spread and price movement. Use comparable assumptions on the exit.</p></details>
+  <details><summary>One trade cannot establish a strategy's performance.</summary><p>A broader test needs more periods, a predefined universe, out-of-sample evaluation and explicit treatment of delistings and corporate actions. This sample does not support an annualized return, Sharpe ratio or win-rate estimate.</p></details>
+</section>
+<section id="read">
+  <h2>Related examples and data</h2>
+  <ul class="references"><li><a href="https://stockdataarchive.com/guides/historical-intraday-stock-data/">Historical intraday stock data</a><span>Session boundaries, timestamps, adjustments and coverage.</span></li><li><a href="https://stockdataarchive.com/guides/duckdb-read-csv/">DuckDB with stock data CSV files</a><span>Column types, timestamps, multiple files and Parquet output.</span></li><li><a href="https://stockdataarchive.com/delisted-stocks/">Delisted stock coverage</a><span>Check historical symbols before choosing a research universe.</span></li><li><a href="https://stockdataarchive.com/free-intraday-data/">Free sample files</a><span>Inspect the bars, trades and quotes used here.</span></li></ul>
+  <h3>Find the same files through MCP</h3>
+  <pre><code>claude mcp add --transport http stock-data-archive \
+  https://stockdataarchive.com/mcp</code></pre>
+  <p>The <a href="https://stockdataarchive.com/mcp-server/">MCP server</a> provides coverage, schemas and sample download URLs. It returns metadata; the computation runs in your own environment. See the <a href="https://stockdataarchive.com/docs/">data documentation</a> for file details.</p>
+</section>
+</article></div>
+</main>
+<footer><div class="wrap"><div>Published by <a href="https://stockdataarchive.com/">Stock Data Archive</a>.<br></div><div><a href="https://github.com/stockdataarchive/stock-data-archive">Code and issue tracker</a><br><a href="mailto:support@stockdataarchive.com">support@stockdataarchive.com</a></div></div></footer>
+<script id="lab-data" type="application/json">@@DATA@@</script>
+<script src="lab.js" defer></script>
+</body>
+</html>

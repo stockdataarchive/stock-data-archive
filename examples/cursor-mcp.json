@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "stock-data-archive": {
+      "url": "https://stockdataarchive.com/mcp"
+    }
+  }
+}

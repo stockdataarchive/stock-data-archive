@@ -1,0 +1,5 @@
+latency_ms,gross_per_share,midpoint_per_share,spread_cost_per_share,bar_minus_quote_per_share
+0,0.87,0.94,0.07,0.105
+100,0.87,0.955,0.085,0.105
+250,0.86,0.915,0.055,0.115
+1000,1.0,1.105,0.105,-0.025

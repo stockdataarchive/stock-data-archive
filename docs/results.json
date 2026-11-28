@@ -1,0 +1,571 @@
+{
+  "symbol": "AAPL",
+  "date": "2026-11-09",
+  "timezone": "America/New_York",
+  "duckdb_version": "1.4.1",
+  "sources": [
+    {
+      "dataset": "1min",
+      "url": "https://stockdataarchive.com/samples/AAPL_2026-11-09_1min.parquet",
+      "sha256": "4c71b06b49a83c964db738632b9e6c96243e3c1df4f07558ab3618a252fe8c4d",
+      "bytes": 25673
+    },
+    {
+      "dataset": "trades",
+      "url": "https://stockdataarchive.com/samples/AAPL_2026-11-09_trades.parquet",
+      "sha256": "b035526a7613132fb084dcd9ab918e77ef1621dbc477157a10f294d620da4ac4",
+      "bytes": 12849823
+    },
+    {
+      "dataset": "quotes",
+      "url": "https://stockdataarchive.com/samples/AAPL_2026-11-09_quotes.parquet",
+      "sha256": "3b83642ee152bbe408da169c080df8d808d0c97ba18ee8bb6325b61177d8e54b",
+      "bytes": 5462126
+    }
+  ],
+  "counts": {
+    "bars": 846,
+    "trades": 754422,
+    "quotes": 517808
+  },
+  "audit": {
+    "regular_session_bars": 390,
+    "opening_range_bars": 30,
+    "duplicate_bar_timestamps": 0,
+    "quote_age_limit_ms": 1000,
+    "invalid_quote_rows": 435
+  },
+  "range_high": 350.34,
+  "traded": true,
+  "scenarios": [
+    {
+      "latency_ms": 0,
+      "entry": {
+        "request_ns": 1794237900000000000,
+        "request_time": "10:25:00.000",
+        "quote_ns": 1794237899919714413,
+        "sequence_number": 32047044,
+        "age_ms": 80.285587,
+        "bid": 350.31,
+        "ask": 350.38,
+        "mid": 350.345,
+        "bid_size_raw": 40.0,
+        "ask_size_raw": 80.0
+      },
+      "exit": {
+        "request_ns": 1794257700000000000,
+        "request_time": "15:55:00.000",
+        "quote_ns": 1794257699999243000,
+        "sequence_number": 105324507,
+        "age_ms": 0.757,
+        "bid": 351.25,
+        "ask": 351.32,
+        "mid": 351.285,
+        "bid_size_raw": 200.0,
+        "ask_size_raw": 120.0
+      },
+      "gross_per_share": 0.87,
+      "midpoint_per_share": 0.94,
+      "spread_cost_per_share": 0.07,
+      "bar_minus_quote_per_share": 0.105
+    },
+    {
+      "latency_ms": 100,
+      "entry": {
+        "request_ns": 1794237900100000000,
+        "request_time": "10:25:00.100",
+        "quote_ns": 1794237900072488622,
+        "sequence_number": 32047971,
+        "age_ms": 27.511378,
+        "bid": 350.31,
+        "ask": 350.38,
+        "mid": 350.345,
+        "bid_size_raw": 40.0,
+        "ask_size_raw": 80.0
+      },
+      "exit": {
+        "request_ns": 1794257700100000000,
+        "request_time": "15:55:00.100",
+        "quote_ns": 1794257700097158691,
+        "sequence_number": 105341336,
+        "age_ms": 2.841309,
+        "bid": 351.25,
+        "ask": 351.35,
+        "mid": 351.3,
+        "bid_size_raw": 200.0,
+        "ask_size_raw": 120.0
+      },
+      "gross_per_share": 0.87,
+      "midpoint_per_share": 0.955,
+      "spread_cost_per_share": 0.085,
+      "bar_minus_quote_per_share": 0.105
+    },
+    {
+      "latency_ms": 250,
+      "entry": {
+        "request_ns": 1794237900250000000,
+        "request_time": "10:25:00.250",
+        "quote_ns": 1794237900072488622,
+        "sequence_number": 32047971,
+        "age_ms": 177.511378,
+        "bid": 350.31,
+        "ask": 350.38,
+        "mid": 350.345,
+        "bid_size_raw": 40.0,
+        "ask_size_raw": 80.0
+      },
+      "exit": {
+        "request_ns": 1794257700250000000,
+        "request_time": "15:55:00.250",
+        "quote_ns": 1794257700246059836,
+        "sequence_number": 105369387,
+        "age_ms": 3.940164,
+        "bid": 351.24,
+        "ask": 351.28,
+        "mid": 351.26,
+        "bid_size_raw": 40.0,
+        "ask_size_raw": 80.0
+      },
+      "gross_per_share": 0.86,
+      "midpoint_per_share": 0.915,
+      "spread_cost_per_share": 0.055,
+      "bar_minus_quote_per_share": 0.115
+    },
+    {
+      "latency_ms": 1000,
+      "entry": {
+        "request_ns": 1794237901000000000,
+        "request_time": "10:25:01.000",
+        "quote_ns": 1794237900916017683,
+        "sequence_number": 32053381,
+        "age_ms": 83.982317,
+        "bid": 350.31,
+        "ask": 350.38,
+        "mid": 350.345,
+        "bid_size_raw": 80.0,
+        "ask_size_raw": 200.0
+      },
+      "exit": {
+        "request_ns": 1794257701000000000,
+        "request_time": "15:55:01.000",
+        "quote_ns": 1794257700966708134,
+        "sequence_number": 105423005,
+        "age_ms": 33.291866,
+        "bid": 351.38,
+        "ask": 351.52,
+        "mid": 351.45,
+        "bid_size_raw": 80.0,
+        "ask_size_raw": 80.0
+      },
+      "gross_per_share": 1.0,
+      "midpoint_per_share": 1.105,
+      "spread_cost_per_share": 0.105,
+      "bar_minus_quote_per_share": -0.025
+    }
+  ],
+  "chart": [
+    {
+      "time": "09:34:00.000",
+      "minute": 4,
+      "close": 347.9075
+    },
+    {
+      "time": "09:39:00.000",
+      "minute": 9,
+      "close": 349.86
+    },
+    {
+      "time": "09:44:00.000",
+      "minute": 14,
+      "close": 349.2
+    },
+    {
+      "time": "09:49:00.000",
+      "minute": 19,
+      "close": 348.9
+    },
+    {
+      "time": "09:54:00.000",
+      "minute": 24,
+      "close": 348.93
+    },
+    {
+      "time": "09:59:00.000",
+      "minute": 29,
+      "close": 348.2
+    },
+    {
+      "time": "10:04:00.000",
+      "minute": 34,
+      "close": 348.7
+    },
+    {
+      "time": "10:09:00.000",
+      "minute": 39,
+      "close": 348.69
+    },
+    {
+      "time": "10:14:00.000",
+      "minute": 44,
+      "close": 349.02
+    },
+    {
+      "time": "10:19:00.000",
+      "minute": 49,
+      "close": 349.83
+    },
+    {
+      "time": "10:24:00.000",
+      "minute": 54,
+      "close": 350.345
+    },
+    {
+      "time": "10:29:00.000",
+      "minute": 59,
+      "close": 350.6056
+    },
+    {
+      "time": "10:34:00.000",
+      "minute": 64,
+      "close": 350.43
+    },
+    {
+      "time": "10:39:00.000",
+      "minute": 69,
+      "close": 350.79
+    },
+    {
+      "time": "10:44:00.000",
+      "minute": 74,
+      "close": 351.06
+    },
+    {
+      "time": "10:49:00.000",
+      "minute": 79,
+      "close": 350.79
+    },
+    {
+      "time": "10:54:00.000",
+      "minute": 84,
+      "close": 350.995
+    },
+    {
+      "time": "10:59:00.000",
+      "minute": 89,
+      "close": 351.06
+    },
+    {
+      "time": "11:04:00.000",
+      "minute": 94,
+      "close": 350.39
+    },
+    {
+      "time": "11:09:00.000",
+      "minute": 99,
+      "close": 350.925
+    },
+    {
+      "time": "11:14:00.000",
+      "minute": 104,
+      "close": 350.86
+    },
+    {
+      "time": "11:19:00.000",
+      "minute": 109,
+      "close": 350.0
+    },
+    {
+      "time": "11:24:00.000",
+      "minute": 114,
+      "close": 350.06
+    },
+    {
+      "time": "11:29:00.000",
+      "minute": 119,
+      "close": 349.975
+    },
+    {
+      "time": "11:34:00.000",
+      "minute": 124,
+      "close": 350.005
+    },
+    {
+      "time": "11:39:00.000",
+      "minute": 129,
+      "close": 349.66
+    },
+    {
+      "time": "11:44:00.000",
+      "minute": 134,
+      "close": 349.72
+    },
+    {
+      "time": "11:49:00.000",
+      "minute": 139,
+      "close": 349.44
+    },
+    {
+      "time": "11:54:00.000",
+      "minute": 144,
+      "close": 349.965
+    },
+    {
+      "time": "11:59:00.000",
+      "minute": 149,
+      "close": 350.45
+    },
+    {
+      "time": "12:04:00.000",
+      "minute": 154,
+      "close": 349.85
+    },
+    {
+      "time": "12:09:00.000",
+      "minute": 159,
+      "close": 350.28
+    },
+    {
+      "time": "12:14:00.000",
+      "minute": 164,
+      "close": 350.305
+    },
+    {
+      "time": "12:19:00.000",
+      "minute": 169,
+      "close": 350.1827
+    },
+    {
+      "time": "12:24:00.000",
+      "minute": 174,
+      "close": 349.9051
+    },
+    {
+      "time": "12:29:00.000",
+      "minute": 179,
+      "close": 349.97
+    },
+    {
+      "time": "12:34:00.000",
+      "minute": 184,
+      "close": 349.615
+    },
+    {
+      "time": "12:39:00.000",
+      "minute": 189,
+      "close": 349.27
+    },
+    {
+      "time": "12:44:00.000",
+      "minute": 194,
+      "close": 349.01
+    },
+    {
+      "time": "12:49:00.000",
+      "minute": 199,
+      "close": 349.295
+    },
+    {
+      "time": "12:54:00.000",
+      "minute": 204,
+      "close": 349.3
+    },
+    {
+      "time": "12:59:00.000",
+      "minute": 209,
+      "close": 349.09
+    },
+    {
+      "time": "13:04:00.000",
+      "minute": 214,
+      "close": 349.415
+    },
+    {
+      "time": "13:09:00.000",
+      "minute": 219,
+      "close": 349.34
+    },
+    {
+      "time": "13:14:00.000",
+      "minute": 224,
+      "close": 349.495
+    },
+    {
+      "time": "13:19:00.000",
+      "minute": 229,
+      "close": 349.16
+    },
+    {
+      "time": "13:24:00.000",
+      "minute": 234,
+      "close": 349.0801
+    },
+    {
+      "time": "13:29:00.000",
+      "minute": 239,
+      "close": 349.09
+    },
+    {
+      "time": "13:34:00.000",
+      "minute": 244,
+      "close": 349.14
+    },
+    {
+      "time": "13:39:00.000",
+      "minute": 249,
+      "close": 349.43
+    },
+    {
+      "time": "13:44:00.000",
+      "minute": 254,
+      "close": 349.96
+    },
+    {
+      "time": "13:49:00.000",
+      "minute": 259,
+      "close": 350.24
+    },
+    {
+      "time": "13:54:00.000",
+      "minute": 264,
+      "close": 350.555
+    },
+    {
+      "time": "13:59:00.000",
+      "minute": 269,
+      "close": 350.7101
+    },
+    {
+      "time": "14:04:00.000",
+      "minute": 274,
+      "close": 351.165
+    },
+    {
+      "time": "14:09:00.000",
+      "minute": 279,
+      "close": 351.435
+    },
+    {
+      "time": "14:14:00.000",
+      "minute": 284,
+      "close": 351.87
+    },
+    {
+      "time": "14:19:00.000",
+      "minute": 289,
+      "close": 351.852
+    },
+    {
+      "time": "14:24:00.000",
+      "minute": 294,
+      "close": 351.63
+    },
+    {
+      "time": "14:29:00.000",
+      "minute": 299,
+      "close": 351.24
+    },
+    {
+      "time": "14:34:00.000",
+      "minute": 304,
+      "close": 351.34
+    },
+    {
+      "time": "14:39:00.000",
+      "minute": 309,
+      "close": 351.9
+    },
+    {
+      "time": "14:44:00.000",
+      "minute": 314,
+      "close": 351.59
+    },
+    {
+      "time": "14:49:00.000",
+      "minute": 319,
+      "close": 351.225
+    },
+    {
+      "time": "14:54:00.000",
+      "minute": 324,
+      "close": 351.27
+    },
+    {
+      "time": "14:59:00.000",
+      "minute": 329,
+      "close": 351.34
+    },
+    {
+      "time": "15:04:00.000",
+      "minute": 334,
+      "close": 351.52
+    },
+    {
+      "time": "15:09:00.000",
+      "minute": 339,
+      "close": 351.525
+    },
+    {
+      "time": "15:14:00.000",
+      "minute": 344,
+      "close": 351.64
+    },
+    {
+      "time": "15:19:00.000",
+      "minute": 349,
+      "close": 351.18
+    },
+    {
+      "time": "15:24:00.000",
+      "minute": 354,
+      "close": 350.957
+    },
+    {
+      "time": "15:29:00.000",
+      "minute": 359,
+      "close": 351.176
+    },
+    {
+      "time": "15:34:00.000",
+      "minute": 364,
+      "close": 350.785
+    },
+    {
+      "time": "15:39:00.000",
+      "minute": 369,
+      "close": 350.805
+    },
+    {
+      "time": "15:44:00.000",
+      "minute": 374,
+      "close": 350.76
+    },
+    {
+      "time": "15:49:00.000",
+      "minute": 379,
+      "close": 351.17
+    },
+    {
+      "time": "15:54:00.000",
+      "minute": 384,
+      "close": 351.31
+    },
+    {
+      "time": "15:59:00.000",
+      "minute": 389,
+      "close": 350.49
+    }
+  ],
+  "signal": {
+    "bar_start_ns": 1794237840000000000,
+    "known_at_ns": 1794237900000000000,
+    "high": 350.43,
+    "bar_start": "10:24:00.000",
+    "known_at": "10:25:00.000",
+    "exit_at": "15:55:00.000"
+  },
+  "bar_model": {
+    "buy": 350.345,
+    "sell": 351.32,
+    "gross_per_share": 0.975
+  }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stockdataarchive.github.io/stock-data-archive/sitemap.xml

@@ -1,0 +1,9 @@
+.venv/
+.cache/
+__pycache__/
+*.pyc
+.mcpregistry_*
+mcp-publisher
+*.tar.gz
+*.sigstore.json
+AGENTS.md
