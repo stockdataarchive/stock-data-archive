@@ -1,4 +1,8 @@
-<a href="https://stockdataarchive.com"><img src="docs/assets/logo-lockup-ink.png" alt="Stock Data Archive" width="420"></a>
+<a href="https://stockdataarchive.com"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-lockup-white.svg">
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/logo-lockup-ink.svg">
+  <img src="docs/assets/logo-lockup-ink.svg" alt="Stock Data Archive" width="420">
+</picture></a>
 
 ### [stockdataarchive.com](https://stockdataarchive.com)
 
